@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Litecoin QR Payment Generator</title>
+    <meta property="og:image" content="img/example.png">
+
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="css/print.css" media="print"/>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+    <script src="js/index.js"></script>
+
+  </head>
+  <body>
+
+
+    <div class="container hidden-print">
+      <div class="row">
+
+        <div class="col-sm-9">
+          <h1>Litecoin Payment Poster Generator</h1>
+          <p class="lead">Enter your Litecoin wallet address and click Preview &amp; Print. That's it.</p>
+
+          <p>Choose <code> Save As PDF</code> as printer destination. Don't forget to exclude <code>Headers and Footers</code> option before saving.</p> 
+		  <p>To do this simply click <code>More Settings</code> then unselect <code>Headers and Footers</code> from the options. You can use the PDF as poster, sticker, etc.</p>
+<br/>
+        <form class="form-horizontal"  >
+          <div class="form-group">
+            <label class="col-xs-3 control-label" for="Litecoin">Litecoin</label>
+            <div class="col-xs-9">
+              <input type="text" class="form-control" id="Litecoin" value="Litecoin" />
+			   <span class="help-block">You can customize the text</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-xs-3 control-label" for="key">Accepted Here Text</label>
+            <div class="col-xs-9">
+              <input type="text" class="form-control" id="key" value="Accepted Here" />
+              <span class="help-block">You can customize the text</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-xs-3 control-label" for="address">Wallet Address</label>
+            <div class="col-xs-9">
+              <input type="text" class="form-control" id="address" placeholder="Enter Wallet Address Here" />
+			  <span class="help-block">Enter Your Litecoin address such as LYCofhMWSu7B6wfGvUurXyFCRS3NtynZzF</span>
+            </div>
+          </div>
+		  <div class="form-group">
+            <label class="col-xs-3 control-label" for="scan">Scan the Code</label>
+            <div class="col-xs-9">
+              <input type="text" class="form-control" id="scan" value="SCAN THE CODE" />
+			  <span class="help-block">You can change it to your own language</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-xs-offset-3 col-xs-9">
+              <button type="button" class="btn btn-primary" onclick="generate();">Preview &amp; Print</button>
+            </div>
+          </div>
+        </form>
+        </div>
+
+        <div class="example thumbnail col-sm-3"><img src="img/example.png"></div>
+
+      </div>
+
+      <footer class="footer">
+	   <p>Spread this page to boost Litecoin adoption all around the world.</p>
+       <p>Please donate LYCofhMWSu7B6wfGvUurXyFCRS3NtynZzF</p>
+      </footer>
+      
+    </div><!-- /.container -->
+
+    <div class="print">
+      <div class="logo">
+        <img src="img/logo.svg" />
+      </div>
+      <div class="Litecoin"> 
+        <span class="text"></span>
+      </div>
+      <div class="key">
+        <span class="img">
+          <img src="img/qr.svg" /> 
+        </span>
+        <span class="text"></span>
+      </div>
+      <div id="qrcode"></div>
+	  <div class="address"><span class="text"></span></div>
+      <div class="scan"><span class="text"></span></div>
+    </div>
+
+  </body>
+</html>
